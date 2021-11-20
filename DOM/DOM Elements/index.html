@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Elements</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+
+        h1 {
+            display: block;
+        }
+
+        ul {
+            display: none;
+        }
+
+        input:focus ~ ul {
+            display: block;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">JAVASCRIPT
+        HIHI
+    </h1>
+
+    <h1 class="heading">JAVASCRIPT</h1>
+    <h1 class="heading">JAVASCRIPT</h1>
+    <h1 class="heading">JAVASCRIPT</h1>
+    
+    <p >HÍ AE!</p>
+
+    <div class="box">
+
+        <h2 class="heading-2">HIHI</h2>
+        <h2 class="heading-2">HIHI</h2>
+        <h2 class="heading-2">HIHI</h2>
+
+    </div>
+
+    <div class="box-1">
+        <ul>
+            <li>Javascript 1</li>
+            <li>PHP 1</li>
+        </ul>
+    </div>
+
+    <div class="box-2">
+        <ul>
+            <li>PHP 2</li>
+            <li>Javascript 2</li>
+        </ul>
+    </div>
+    <div>
+        <div type="checkbox" value="1" name="answer"></div>
+        <input type="checkbox" value="1" name="answer" />
+        <input type="checkbox" value="2" name="answer" checked />
+        <input type="checkbox" value="3" name="answer" disabled />
+        <input type="checkbox" value="4" name="answer" checked disabled />
+    </div>
+
+    <input type="text">
+    <input type="checkbox">
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <div class="find">
+        <input placeholder="Tìm kiếm">
+        <ul>
+            <li>PHP</li>
+            <li>JAVASCRIPT</li>
+            <li>PYTHON</li>
+        </ul>
+    </div>
+
+    <div class="DIV">
+        DIV
+
+        <button> CLICK ME!</button>
+    </div>
+</body>
+    <script src="./main.js"></script>
+</html>

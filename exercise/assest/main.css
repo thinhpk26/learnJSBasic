@@ -1,0 +1,105 @@
+body {
+    height: 100vh;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body > div {
+    width: 700px;
+    margin: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+#heading {
+    position: relative;
+    
+}
+
+#heading #nav {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.nav-items {
+    flex: 1;
+    transition: all ease-in-out 1s;
+}
+
+.nav-items > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#nav .nav-items i {
+    font-size: 24px;
+    color: #f6a8c1;
+    margin-right: 8px;
+    line-height: 51.56px;
+    font-weight: 800;
+}
+
+#nav .nav-items h2 {
+    letter-spacing: 1px;
+    color: #ca607d;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.underline {
+    background-color: #c23564;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    border-radius: 16px;
+    transition: all ease 0.5s;
+}
+
+#body {
+    display: block;
+    margin: 0 12px;
+}
+
+.content {
+    transition: all ease 1s;
+}
+
+.content p {
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    font-size: 20px;
+    color: #333;
+}
+
+#nav .active i {
+    font-size: 28px;
+    color: #d44575;
+}
+
+#nav .active h2 {
+    font-size: 26px;
+    color: #785047;
+}
+
+#nav .active .line-box {
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fbdce6;
+}
+
+#nav .active {
+    background-color: #fff7fa;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}

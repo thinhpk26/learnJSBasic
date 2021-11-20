@@ -1,0 +1,100 @@
+body {
+    height: 200vh;
+    background-color: #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.background {
+    width: 400px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    align-self: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background h2 {
+    margin-top: 40px;
+}
+
+.background p {
+    color: #a0a0a0;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+.background form {
+    width: 85%;
+}
+
+form > div {
+    height: 96px;
+}
+
+form > div:nth-child(1) h4 {
+    margin-top: 0;
+}
+
+form > div h4 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+form > div > select,
+form > div > input {
+    padding-left: 8px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #a0a0a0;
+    width: 96%;
+    height: 36px;
+    font-size: 16px;
+    outline: none;
+}
+
+form > div input:hover {
+    box-shadow: inset 0 0 5px rgb(55, 202, 158);
+}
+
+form > div .form-message {
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+form .invalid input:hover {
+    border-color: #ff4141;
+    box-shadow: inset 0 0 5px #ff4141;
+}
+
+form .invalid input {
+    border-color: #ff4141;
+    box-shadow: inset 0 0 5px #ff4141;
+}
+
+form .invalid .form-message {
+    color: #ff4141;
+}
+
+form .form-registration {
+    width: 100%;
+    height: 40px;
+    margin-top: 44px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(55, 202, 158);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    color: #fff;
+}
+
+form .form-registration:active {
+    opacity: 0.8;
+}
+
+form .form-registration {
+    cursor: pointer;
+}

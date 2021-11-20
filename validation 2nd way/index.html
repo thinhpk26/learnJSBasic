@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <article class="registration">
+        <header>
+            <h2>Thành viên đăng ký</h2>
+            <p>Cùng nhau học lập trình miễn phí tại f8 </p>
+        </header>
+        <form id="form-1" action="">
+            <section class="form-group">
+                <label class="form-label" for="full-name"><h4>Tên đầy đủ</h4></label>
+                <input id="fullname" class="full-name" rules="isRequired" type="text" placeholder="VD: Thịnh Văn" name="full-name">
+                <span class="form-message"></span>
+            </section>
+            <section class="form-group">
+                <label class="form-label" for="email"><h4>Email</h4></label>
+                <input id="email" class="email" type="text" rules="isRequired|isEmail" placeholder="VD: abc@gmail.com" name="email">
+                <span class="form-message"></span>
+            </section>
+            <section class="form-group">
+                <label class="form-label" for="password"><h4>Mật khẩu</h4></label>
+                <input id="password" class="password" type="password" rules="isRequired|isMin:8" placeholder="VD: 12345678" name="password">
+                <span class="form-message"></span>
+            </section>
+            <section class="form-group">
+                <label class="form-label" for="retype-passwword"><h4>Nhập lại mật khẩu</h4></label>
+                <input id="retype" class="retype-passwword" type="password" rules="isRequired|isCollect" placeholder="VD: 12345678" name="retype-passwword">
+                <span class="form-message"></span>
+            </section>
+
+            <button class="registration-btn">Đăng ký</button>
+        </form>
+    </article>
+    <script src="./validator.js"></script>
+    <script>
+        let registerform =  new Validator('#form-1');
+
+        registerform.onSubmit = function(formData) {
+            console.log(formData)
+        }
+    </script>
+</body>
+</html>

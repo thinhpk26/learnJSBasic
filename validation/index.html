@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="background">
+        <h2>Thành viên đăng ký</h2>
+        <p>Cùng nhau học lập trình miễn phí tại f8 </p>
+        <form id="form-1" action="">
+            <div class="form-group">
+                <label class="form-label" for="avatar"><h4>Ảnh đại diện</h4></label>
+                <input id="avatar" type="file"name="avatar">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="full-name"><h4>Tên đầy đủ</h4></label>
+                <input id="fullname" class="full-name" type="text" placeholder="VD: Thịnh Văn" name="full-name">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email"><h4>Email</h4></label>
+                <input id="email" class="email" type="text" placeholder="VD: abc@gmail.com" name="email">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="password"><h4>Mật khẩu</h4></label>
+                <input id="password" class="password" type="password" placeholder="VD: 12345678" name="password">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="retype-passwword"><h4>Nhập lại mật khẩu</h4></label>
+                <input id="retype" class="retype-passwword" type="password" placeholder="VD: 12345678" name="retype-passwword">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="province"><h4>Chọn Tỉnh/Thành Phố</h4></label>
+                <select name="province" id="province">
+                    <option class="province" value="">--Chọn Tỉnh/Thành Phố--</option>
+                    <option class="province" value="Bn">Bắc Ninh</option>
+                    <option class="province" value="Hn">Hà Nội</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="render"><h4>Giới Tính</h4></label>
+                <div>
+                    <input type="checkbox" name="render" value="male">
+                    Nam
+                </div>
+                <div>
+                    <input type="checkbox" name="render" value="female">
+                    Nữ
+                </div>
+                <div>
+                    <input type="checkbox" name="render" value="other">
+                    Other
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+            <button class="form-registration">Đăng ký</button>
+        </form>
+    </div>
+    <script src="./validation.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            formGroup: '.form-group',
+            formMessage: '.form-message',
+            rules: [
+                Validator.isRequired('#avatar'),
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password'),
+                Validator.isMinLength('#password', 8),
+                Validator.isRequired('#retype'),
+                Validator.isRetypeCollect('#retype', function() {
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập lại không chính xác'),
+                Validator.isRequired('#province'),
+                Validator.isRequired('input[name="render"]')
+            ],
+            onSubmit: function(data) {
+                console.log(data)
+            }
+        })
+        document.querySelectorAll('#form-1 > div input').forEach(function(input) {
+            input.onfocus = function() {
+                input.select();
+            }
+        })
+    </script>
+</body>
+</html>
